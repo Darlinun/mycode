@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="./jq/jquery-1.12.4.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <!-- <script src="./js/vue.js"></script> -->
+    <script src="./js/index.js"></script>
+</head>
+
+<body>
+    <div class="main_box">
+        <h1>捐赠管理</h1>
+        <div class="data_select">
+            <span>受捐单位:</span>
+            <select id="select_key">
+                <option>广州传智播客</option>
+                <option>壹基金</option>
+                <option>海洋基金</option>
+            </select>
+            <button id="btn_select">查询</button>
+            <button id="btn_select_all">显示全部数据</button>
+        </div>
+        <div class="data_add">
+            <span>捐赠人:</span>
+            <input type="text" id="donor_name">
+            <span>受捐单位</span>
+            <select id="donor_department">
+                <option>广州传智播客</option>
+                <option>壹基金</option>
+                <option>海洋基金</option>
+            </select>
+            <span>金额:</span>
+            <input type="text" id="donor_money">
+            <span>受捐日期:</span>
+            <input type="date" id="donor_date">
+            <button id="add_btn">新增</button>
+            <button id="save_Data">保存</button>
+        </div>
+        <div class="data_show">
+            <table class="table table-bordered" id='data_table'>
+                <tbody id='mytbody'>
+                    <tr>
+                        <td>序号</td>
+                        <td>捐赠人</td>
+                        <td>受捐单位</td>
+                        <td>金额</td>
+                        <td>受捐日期</td>
+                        <td>操作</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <!-- 删模态库 -->
+    <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="del_Modal">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-body">
+                        <p>确定删除此条记录吗?</p>
+                    </div>
+                    <div class="modal-footer" style="height: 45px;">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-primary" id="del_modal_btn">删除 </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 改模态库 -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="up_Modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">更改数据</h4>
+                </div>
+                <div class="modal-body">
+                    <br>
+                    <label for="inputEmail3" class="col-sm-2 control-label">捐赠人:</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" placeholder="请填写更改内容" id="new_data_name">
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <label for="inputEmail3" class="col-sm-2 control-label">受捐单位:</label>
+                    <div class="col-sm-10">
+                        <select id="new_data_department">
+                            <option>广州传智播客</option>
+                            <option>壹基金</option>
+                            <option>海洋基金</option>
+                        </select>
+                    </div>
+                    <br>
+                    <br>
+                    <label for="inputEmail3" class="col-sm-2 control-label">金额:</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" placeholder="请填写更改内容" id="new_data_money">
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <label for="inputEmail3" class="col-sm-2 control-label">受捐日期:</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" placeholder="请填写更改内容" id="new_data_date">
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-defaultnew_" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="new_data_up">更改数据</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
+</body>
+
+</html>
